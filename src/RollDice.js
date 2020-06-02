@@ -3,6 +3,10 @@ import Die from "./Die";
 import "./RollDice.css";
 
 class RollDice extends Component {
+  static defaultProps = {
+    faces: ["one", "two", "three", "four", "five", "six"],
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -14,10 +18,13 @@ class RollDice extends Component {
   }
 
   roll() {
-    const faces = ["one", "two", "three", "four", "five", "six"];
     const num1 = Math.floor(Math.random() * 6);
     const num2 = Math.floor(Math.random() * 6);
-    this.setState({ die1: faces[num1], die2: faces[num2], isRolling: true });
+    this.setState({
+      die1: this.props.faces[num1],
+      die2: this.props.faces[num2],
+      isRolling: true,
+    });
 
     setTimeout(() => {
       this.setState({ isRolling: false });
@@ -43,7 +50,7 @@ class RollDice extends Component {
 
     return (
       <div className="RollDice">
-        <div className="RollDice-dices">
+        <div className="RollDice-container">
           <Die face={this.state.die1} isRolling={this.state.isRolling} />
           <Die face={this.state.die2} isRolling={this.state.isRolling} />
         </div>
