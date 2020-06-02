@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./Die.css";
 
 class Die extends Component {
   constructor(props) {
@@ -7,8 +8,11 @@ class Die extends Component {
 
   render() {
     const { face } = this.props;
-
-    return <i className={`fas fa-dice-${face}`}></i>;
+    return (
+      <div className="Die">
+        <i className={`fas fa-dice-${face}`}></i>
+      </div>
+    );
   }
 }
 

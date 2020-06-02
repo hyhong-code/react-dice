@@ -1,0 +1,7 @@
+.Die {
+  margin: 2rem;
+}
+
+.Die > i {
+  font-size: 10rem;
+}

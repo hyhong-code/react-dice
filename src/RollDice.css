@@ -1,0 +1,10 @@
+.RollDice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.RollDice-dices {
+  display: flex;
+  justify-content: center;
+}
