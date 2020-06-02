@@ -7,9 +7,17 @@ class Die extends Component {
   }
 
   render() {
-    const { face } = this.props;
+    const { face, isRolling } = this.props;
+
+    let classes;
+
+    if (isRolling) {
+      classes = "Die shake";
+    } else {
+      classes = "Die";
+    }
     return (
-      <div className="Die">
+      <div className={classes}>
         <i className={`fas fa-dice-${face}`}></i>
       </div>
     );
