@@ -33,7 +33,6 @@ class RollDice extends Component {
 
   render() {
     let button;
-
     if (this.state.isRolling) {
       button = (
         <button className="RollDice-button" disabled>
